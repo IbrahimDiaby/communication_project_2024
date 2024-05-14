@@ -64,6 +64,81 @@ body {
   text-align: left;
   background-color: #fff; }
 
+body.home{
+  overflow-y: hidden;
+}
+
+
+/* My Custom Code */
+.custom-loader-container{
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  place-items: center;
+  position: absolute;
+  top: 0;
+  z-index: 999;
+  background-color: var(--white);
+}
+
+.loader{
+  display: grid;
+  width: calc(100vh/2);
+  height: calc(100vh/2);
+  place-self: center;
+}
+
+.loader img{
+  display: grid;
+  place-self: center;
+  width: 150px;
+  height: 150px;
+  animation: custom-loader-animation 1.5s ease-in-out 0s infinite alternate both;
+}
+
+.loader-bar{
+  height: 10px;
+  width: calc(100vh/2);
+  background-color: #69686895;
+  border-radius: 10px;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.loader-progress-bar{
+  height: 10px;
+  width: calc(100vh/2);
+  background-color: #fd7e14;
+  border-radius: 10px;
+  position: absolute;
+  animation: progress-bar-animation 5s ease-in-out 0s infinite alternate both;
+}
+
+@keyframes custom-loader-animation {
+  from{
+    width: 150px;
+    height: 150px;
+  }
+
+  to{
+    width: calc(100vh/2);
+    height: calc(100vh/2);
+  }
+}
+
+
+@keyframes progress-bar-animation {
+  from{
+    left: calc(-100vh/2);
+  }
+
+  to{
+    left: 0px;
+  }
+}
+
+/* My ending custom code */
+
 [tabindex="-1"]:focus {
   outline: 0 !important; }
 

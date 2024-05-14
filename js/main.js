@@ -16,6 +16,16 @@
     scrollProperty: 'scroll'
   });
 
+	/* Custom editing */
+  setTimeout(() => {
+	$('body.home').css('overflow', 'scroll');
+	$('.custom-loader-container').css({
+		'visibility' : 'visible',
+		'display' : 'none',
+		'opacity' : '0',
+	});
+  }, 5000);
+	/* End custom editing */
 
 	var fullHeight = function() {
 

@@ -17,14 +17,26 @@
   });
 
 	/* Custom editing */
-  setTimeout(() => {
-	$('body.home').css('overflow', 'scroll');
-	$('.custom-loader-container').css({
-		'visibility' : 'visible',
-		'display' : 'none',
-		'opacity' : '0',
-	});
-  }, 5000);
+	let SP_init = window.localStorage.getItem("SP_init");
+
+  	if (SP_init == null) {
+		setTimeout(() => {
+			$('body.home').css('overflow', 'scroll');
+			$('.custom-loader-container').css({
+				'visibility' : 'visible',
+				'display' : 'none',
+				'opacity' : '0',
+			});
+		  }, 5000);
+		  window.localStorage.setItem("SP_init", "true");
+	} else {
+		$('body.home').css('overflow', 'scroll');
+			$('.custom-loader-container').css({
+				'visibility' : 'visible',
+				'display' : 'none',
+				'opacity' : '0',
+			});
+	};
 	/* End custom editing */
 
 	var fullHeight = function() {
